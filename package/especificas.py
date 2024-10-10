@@ -122,6 +122,28 @@ def sumar_matriz(matriz:list)->int:
         total += suma_filas[i]
     return total
 
+def sumar_columnas(matriz:list)->list:
+    
+    suma_columnas = [0]*len(matriz[0])
+    for j in range(len(matriz[0])):
+        suma = 0
+        for i in range(len(matriz)):
+            suma += matriz[i][j]
+        suma_columnas[j] = suma
+    
+    return suma_columnas
+
+def calcular_porcentaje(cantidad:int, total:int)->float:
+    porcentaje = round((cantidad * 100 / total), 2)
+    return porcentaje
+
+def calcular_porcentaje_array(array:list, total:int)->list:
+
+    lista_porcentajes = [0]*len(array)
+    for i in range(len(array)):
+        lista_porcentajes[i] = calcular_porcentaje(array[i], total)
+    return lista_porcentajes
+
 
 
 def mostrar_array(array:list)->None:

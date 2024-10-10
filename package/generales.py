@@ -49,10 +49,17 @@ def seleccionar_opcion(matriz_ejemplo:list)->None:
                 deposito_mas_recaudaciones = buscar_posicion_mayor(maximas_recaudaciones) + 1
                 print(f"El deposito con mas recaudaciones es el numero {deposito_mas_recaudaciones}")
             case 6:
+                system("cls")
                 cantidad_kilos_cereales_por_deposito = sumar_filas(matriz_ejemplo)
                 cantidad_depositos_mayor_que_50000 = buscar_cantidad_mayor_a_x_en_array(cantidad_kilos_cereales_por_deposito, 50000)
                 print(f"Hay {cantidad_depositos_mayor_que_50000} depositos con mas de 50000 kilos de cereales.")
-            
+            case 7:
+                system("cls")
+                total_cereales = sumar_matriz(matriz_ejemplo)
+                cantidad_cereales = sumar_columnas(matriz_ejemplo)
+                porcentaje_cereales = calcular_porcentaje_array(cantidad_cereales, total_cereales)
+                matriz_porcentajes = generar_matriz_lista_referencia(porcentaje_cereales, cereales)
+                mostrar_matriz(matriz_porcentajes)
             case 9:
                 system("cls")
                 print("Saliendo...")
