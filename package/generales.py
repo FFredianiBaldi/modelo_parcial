@@ -18,9 +18,10 @@ def menu():
 def seleccionar_opcion(matriz_ejemplo:list)->None:
     existencias = generar_matriz(0, 20, 4)
     llenar_matriz_valores_aleatorios(existencias)
+    cereales = ["maiz", "trigo", "cebada", "centeno"]
     system("cls")
-    salir = False
-    while salir == False:
+    continuar = True
+    while continuar:
         menu()
         opcion = get_int("Ingrese una opcion(1-9): ", "Reingrese la opcion(1-9): ", 1, 9)
         match opcion:
@@ -35,9 +36,13 @@ def seleccionar_opcion(matriz_ejemplo:list)->None:
                 system("cls")
                 menores_depositos = encontrar_menores_filas(matriz_ejemplo)
                 mostrar_array(menores_depositos)
+            case 4:
+                system("cls")
+                maximo_kilos_por_cereal = buscar_maximo_columnas(matriz_ejemplo, cereales)
+                mostrar_matriz(maximo_kilos_por_cereal)
             case 9:
                 system("cls")
                 print("Saliendo...")
-                salir = True
+                continuar = False
         system("pause")
         system("cls")

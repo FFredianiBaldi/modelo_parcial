@@ -47,6 +47,35 @@ def encontrar_menores_filas(matriz:list)->list:
         menores_filas += [valor_menor]
     return menores_filas
 
+def buscar_maximo_columnas(matriz:list, referencia:list)->list:
+    """Funcion que busca el maximo por cada columna de una matriz
+
+    Args:
+        matriz (list): matriz a procesar
+
+    Returns:
+        list: matriz de valores maximos por columna con su referencia
+    """
+    maximo_columnas = []
+
+    for j in range(len(matriz[0])):
+        maximo_columna = 0
+        bandera_maximo = True
+        for i in range(len(matriz)):
+            if matriz[i][j] > maximo_columna or bandera_maximo:
+                maximo_columna = matriz[i][j]
+        maximo_columnas += [maximo_columna]
+
+    matriz_resultado = generar_matriz_lista_referencia(maximo_columnas, referencia)
+    return matriz_resultado
+
+def generar_matriz_lista_referencia(valores:list, referencia:list)->list:
+    matriz_resultado = [0] * 2
+    matriz_resultado[0] = referencia
+    matriz_resultado[1] = valores
+
+    return matriz_resultado
+
 
 def mostrar_array(array:list)->None:
     for i in range(len(array)):
