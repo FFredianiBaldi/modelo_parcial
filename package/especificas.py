@@ -148,5 +148,4 @@ def calcular_porcentaje_array(array:list, total:int)->list:
 
 def mostrar_array(array:list)->None:
     for i in range(len(array)):
-        print(array[i], end="\t")
-    print()
+        print(array[i])

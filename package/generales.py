@@ -15,7 +15,7 @@ def menu():
     9. Salir
 """)
     
-def seleccionar_opcion(matriz_ejemplo:list)->None:
+def seleccionar_opcion()->None:
     existencias = generar_matriz(0, 20, 4)
     llenar_matriz_valores_aleatorios(existencias)
     cereales = ["maiz", "trigo", "cebada", "centeno"]
@@ -31,35 +31,41 @@ def seleccionar_opcion(matriz_ejemplo:list)->None:
                 mostrar_matriz(existencias)
             case 2:
                 system("cls")
-                cantidad_kilos_cereales_por_deposito = sumar_filas(matriz_ejemplo)
+                cantidad_kilos_cereales_por_deposito = sumar_filas(existencias)
                 mostrar_array(cantidad_kilos_cereales_por_deposito)
             case 3:
                 system("cls")
-                menores_depositos = encontrar_menores_filas(matriz_ejemplo)
+                menores_depositos = encontrar_menores_filas(existencias)
                 mostrar_array(menores_depositos)
             case 4:
                 system("cls")
-                maximo_kilos_por_cereal = buscar_maximo_columnas(matriz_ejemplo)
+                maximo_kilos_por_cereal = buscar_maximo_columnas(existencias)
                 matriz_con_referencia = generar_matriz_lista_referencia(maximo_kilos_por_cereal, cereales)
                 mostrar_matriz(matriz_con_referencia)
             case 5:
                 system("cls")
-                recaudacion_por_deposito = multiplicar_valores_matriz(valor_cereales, matriz_ejemplo)
-                maximas_recaudaciones = buscar_maximo_filas(recaudacion_por_deposito)
+                recaudacion = multiplicar_valores_matriz(valor_cereales, existencias)
+                maximas_recaudaciones = buscar_maximo_filas(recaudacion)
                 deposito_mas_recaudaciones = buscar_posicion_mayor(maximas_recaudaciones) + 1
                 print(f"El deposito con mas recaudaciones es el numero {deposito_mas_recaudaciones}")
             case 6:
                 system("cls")
-                cantidad_kilos_cereales_por_deposito = sumar_filas(matriz_ejemplo)
+                cantidad_kilos_cereales_por_deposito = sumar_filas(existencias)
                 cantidad_depositos_mayor_que_50000 = buscar_cantidad_mayor_a_x_en_array(cantidad_kilos_cereales_por_deposito, 50000)
                 print(f"Hay {cantidad_depositos_mayor_que_50000} depositos con mas de 50000 kilos de cereales.")
             case 7:
                 system("cls")
-                total_cereales = sumar_matriz(matriz_ejemplo)
-                cantidad_cereales = sumar_columnas(matriz_ejemplo)
+                total_cereales = sumar_matriz(existencias)
+                cantidad_cereales = sumar_columnas(existencias)
                 porcentaje_cereales = calcular_porcentaje_array(cantidad_cereales, total_cereales)
                 matriz_porcentajes = generar_matriz_lista_referencia(porcentaje_cereales, cereales)
                 mostrar_matriz(matriz_porcentajes)
+            case 8:
+                system("cls")
+                recaudacion = multiplicar_valores_matriz(valor_cereales, existencias)
+                recaudacion_por_deposito = sumar_filas(recaudacion)
+                mostrar_array(recaudacion_por_deposito)
+
             case 9:
                 system("cls")
                 print("Saliendo...")
