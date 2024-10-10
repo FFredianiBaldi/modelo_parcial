@@ -1,4 +1,4 @@
-from package.especificas import *
+from package.generales import *
 
 existencia = [
     [10252,  5755, 18274, 14916],
