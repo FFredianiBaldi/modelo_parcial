@@ -31,8 +31,8 @@ def seleccionar_opcion(matriz_ejemplo:list)->None:
                 mostrar_matriz(existencias)
             case 2:
                 system("cls")
-                cantidad_kilos_cereales = sumar_filas(matriz_ejemplo)
-                mostrar_array(cantidad_kilos_cereales)
+                cantidad_kilos_cereales_por_deposito = sumar_filas(matriz_ejemplo)
+                mostrar_array(cantidad_kilos_cereales_por_deposito)
             case 3:
                 system("cls")
                 menores_depositos = encontrar_menores_filas(matriz_ejemplo)
@@ -48,6 +48,11 @@ def seleccionar_opcion(matriz_ejemplo:list)->None:
                 maximas_recaudaciones = buscar_maximo_filas(recaudacion_por_deposito)
                 deposito_mas_recaudaciones = buscar_posicion_mayor(maximas_recaudaciones) + 1
                 print(f"El deposito con mas recaudaciones es el numero {deposito_mas_recaudaciones}")
+            case 6:
+                cantidad_kilos_cereales_por_deposito = sumar_filas(matriz_ejemplo)
+                cantidad_depositos_mayor_que_50000 = buscar_cantidad_mayor_a_x_en_array(cantidad_kilos_cereales_por_deposito, 50000)
+                print(f"Hay {cantidad_depositos_mayor_que_50000} depositos con mas de 50000 kilos de cereales.")
+            
             case 9:
                 system("cls")
                 print("Saliendo...")

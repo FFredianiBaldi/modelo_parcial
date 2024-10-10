@@ -107,6 +107,23 @@ def buscar_posicion_mayor(array:list)->int:
             bandera_mayor = False
     return posicion_mayor
 
+def buscar_cantidad_mayor_a_x_en_array(array:list, mayor_que:int)->int:
+    mayor_a_x = 0
+    for i in range(len(array)):
+        if array[i] > mayor_que:
+            mayor_a_x += 1
+    
+    return mayor_a_x
+
+def sumar_matriz(matriz:list)->int:
+    suma_filas = sumar_filas(matriz)
+    total = 0
+    for i in range(len(suma_filas)):
+        total += suma_filas[i]
+    return total
+
+
+
 def mostrar_array(array:list)->None:
     for i in range(len(array)):
         print(array[i], end="\t")
