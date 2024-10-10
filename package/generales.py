@@ -27,6 +27,14 @@ def seleccionar_opcion(matriz_ejemplo:list)->None:
             case 1:
                 system("cls")
                 mostrar_matriz(existencias)
+            case 2:
+                system("cls")
+                cantidad_kilos_cereales = sumar_filas(matriz_ejemplo)
+                mostrar_array(cantidad_kilos_cereales)
+            case 3:
+                system("cls")
+                menores_depositos = encontrar_menores_filas(matriz_ejemplo)
+                mostrar_array(menores_depositos)
             case 9:
                 system("cls")
                 print("Saliendo...")
