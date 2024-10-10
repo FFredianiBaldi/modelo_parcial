@@ -19,6 +19,7 @@ def seleccionar_opcion(matriz_ejemplo:list)->None:
     existencias = generar_matriz(0, 20, 4)
     llenar_matriz_valores_aleatorios(existencias)
     cereales = ["maiz", "trigo", "cebada", "centeno"]
+    valor_cereales = [40, 50, 45, 55]
     system("cls")
     continuar = True
     while continuar:
@@ -38,8 +39,15 @@ def seleccionar_opcion(matriz_ejemplo:list)->None:
                 mostrar_array(menores_depositos)
             case 4:
                 system("cls")
-                maximo_kilos_por_cereal = buscar_maximo_columnas(matriz_ejemplo, cereales)
-                mostrar_matriz(maximo_kilos_por_cereal)
+                maximo_kilos_por_cereal = buscar_maximo_columnas(matriz_ejemplo)
+                matriz_con_referencia = generar_matriz_lista_referencia(maximo_kilos_por_cereal, cereales)
+                mostrar_matriz(matriz_con_referencia)
+            case 5:
+                system("cls")
+                recaudacion_por_deposito = multiplicar_valores_matriz(valor_cereales, matriz_ejemplo)
+                maximas_recaudaciones = buscar_maximo_filas(recaudacion_por_deposito)
+                deposito_mas_recaudaciones = buscar_posicion_mayor(maximas_recaudaciones) + 1
+                print(f"El deposito con mas recaudaciones es el numero {deposito_mas_recaudaciones}")
             case 9:
                 system("cls")
                 print("Saliendo...")

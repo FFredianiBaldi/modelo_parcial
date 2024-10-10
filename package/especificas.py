@@ -47,14 +47,14 @@ def encontrar_menores_filas(matriz:list)->list:
         menores_filas += [valor_menor]
     return menores_filas
 
-def buscar_maximo_columnas(matriz:list, referencia:list)->list:
+def buscar_maximo_columnas(matriz:list)->list:
     """Funcion que busca el maximo por cada columna de una matriz
 
     Args:
         matriz (list): matriz a procesar
 
     Returns:
-        list: matriz de valores maximos por columna con su referencia
+        list: lista de valores maximos por columna
     """
     maximo_columnas = []
 
@@ -66,8 +66,7 @@ def buscar_maximo_columnas(matriz:list, referencia:list)->list:
                 maximo_columna = matriz[i][j]
         maximo_columnas += [maximo_columna]
 
-    matriz_resultado = generar_matriz_lista_referencia(maximo_columnas, referencia)
-    return matriz_resultado
+    return maximo_columnas
 
 def generar_matriz_lista_referencia(valores:list, referencia:list)->list:
     matriz_resultado = [0] * 2
@@ -76,6 +75,37 @@ def generar_matriz_lista_referencia(valores:list, referencia:list)->list:
 
     return matriz_resultado
 
+def multiplicar_valores_matriz(valores:list, matriz:list)->list:
+    matriz_resultado = generar_matriz(0, len(matriz), len(matriz[0]))
+    for i in range(len(matriz)):
+        for j in range(len(matriz[0])):
+            matriz_resultado[i][j] = matriz[i][j] * valores[j]
+
+    return matriz_resultado
+
+def buscar_maximo_filas(matriz:list)->list:
+
+    maximo_filas = []
+    for i in range(len(matriz)):
+        maximo_fila = 0
+        bandera_maximo = True
+        for j in range(len(matriz[i])):
+            if matriz[i][j] > maximo_fila or bandera_maximo:
+                maximo_fila = matriz[i][j]
+                bandera_maximo = False
+        maximo_filas += [maximo_fila]
+    return maximo_filas
+
+def buscar_posicion_mayor(array:list)->int:
+    posicion_mayor = 0
+    valor_mayor = 0
+    bandera_mayor = True
+    for i in range(len(array)):
+        if array[i] > valor_mayor or bandera_mayor:
+            posicion_mayor = i
+            valor_mayor = array[i]
+            bandera_mayor = False
+    return posicion_mayor
 
 def mostrar_array(array:list)->None:
     for i in range(len(array)):
