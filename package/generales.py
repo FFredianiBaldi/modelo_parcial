@@ -15,16 +15,21 @@ def menu():
     9. Salir
 """)
     
-def seleccionar_opcion():
+def seleccionar_opcion(matriz_ejemplo:list)->None:
+    existencias = generar_matriz(0, 20, 4)
+    llenar_matriz_valores_aleatorios(existencias)
     system("cls")
-    menu()
     salir = False
     while salir == False:
+        menu()
         opcion = get_int("Ingrese una opcion(1-9): ", "Reingrese la opcion(1-9): ", 1, 9)
         match opcion:
+            case 1:
+                system("cls")
+                mostrar_matriz(existencias)
             case 9:
                 system("cls")
                 print("Saliendo...")
                 salir = True
-    system("pause")
-    system("cls")
+        system("pause")
+        system("cls")

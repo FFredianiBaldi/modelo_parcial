@@ -23,4 +23,6 @@ existencia = [
     [ 9554, 18048,  8915, 11551]
 ]
 
-seleccionar_opcion()
+
+
+seleccionar_opcion(existencia)
