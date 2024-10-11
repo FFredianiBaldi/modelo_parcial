@@ -64,7 +64,8 @@ def seleccionar_opcion()->None:
                 system("cls")
                 recaudacion = multiplicar_valores_matriz(valor_cereales, existencias)
                 recaudacion_por_deposito = sumar_filas(recaudacion)
-                mostrar_array(recaudacion_por_deposito)
+                recaudacion_por_deposito_ordenada = ordenar_vector(recaudacion_por_deposito)
+                mostrar_array(recaudacion_por_deposito_ordenada)
 
             case 9:
                 system("cls")

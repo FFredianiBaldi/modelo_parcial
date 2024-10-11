@@ -144,7 +144,15 @@ def calcular_porcentaje_array(array:list, total:int)->list:
         lista_porcentajes[i] = calcular_porcentaje(array[i], total)
     return lista_porcentajes
 
-
+def ordenar_vector(lista:list)->list:
+    for i in range(len(lista)-1): #verde
+        for j in range(i+1, len(lista)): #naranja
+            if lista[i] > lista[j]:
+                c = lista[i]
+                lista[i] = lista[j]
+                lista[j] = c
+    
+    return lista
 
 def mostrar_array(array:list)->None:
     for i in range(len(array)):
